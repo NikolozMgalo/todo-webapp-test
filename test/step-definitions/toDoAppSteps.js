@@ -1,6 +1,6 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import Browser from '../../framework/browser/Browser.js'
-import { mainConfig } from '../../framework/configs/main.wdio.conf.js';
+import { mainConfig } from '../../configs/main.wdio.conf.js';
 import ToDoAppPage from '../page-objects/todoAppPage.js';
 import { assert } from 'chai';
 
@@ -62,16 +62,14 @@ Then(/^Task '(.*)' will not be visible in the input field$/, async (text) => {
 });
 
 Then(/^List summary shows '(.*)'$/, async (text) => {
-    assert.strictEqual(await ToDoAppPage.getTodoCounterText(), 
-    text, 
-    `Todo counter is not showing '${text}'`);
+    assert.strictEqual(await ToDoAppPage.getTodoCounterText(), text, `Todo counter is not showing '${text}'`);
 });
 
 When(/^Task '(.*)' is being edited and added '(.*)'$/, async (text1, text2) => {
     await ToDoAppPage.editTask(text1, text2);
 });
 
-When('User clicks outside input field', async () => {
+When(/^User clicks outside input field$/, async () => {
     await ToDoAppPage.cancelEditing();
 });
 

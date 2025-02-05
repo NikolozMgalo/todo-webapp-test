@@ -1,4 +1,4 @@
-import { mainConfig } from "../framework/configs/main.wdio.conf.js";
+import { mainConfig } from "./main.wdio.conf.js";
 import os from 'os';
 
 export const config = {
