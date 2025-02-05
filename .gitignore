@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+### VisualStudioCode ###
+.vscode/
+
+#Reports directory
+reports/
+
+# Ignore results from allure report 
+allure-results/
+allure-report/
